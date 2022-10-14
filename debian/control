@@ -1,0 +1,33 @@
+Source: node-optimist
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: David Paleino <dapal@debian.org>,
+           Dominique Dumont <dod@debian.org>,
+           Bas Couwenberg <sebastic@debian.org>
+Section: web
+Priority: extra
+Build-Depends: debhelper (>= 9),
+               dh-buildinfo,
+               nodejs
+Standards-Version: 3.9.6
+Vcs-Browser: http://anonscm.debian.org/cgit/collab-maint/node-optimist.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/node-optimist.git
+Homepage: https://github.com/substack/node-optimist
+XS-Testsuite: autopkgtest
+
+Package: node-optimist
+Architecture: all
+Depends: ${misc:Depends},
+         nodejs,
+         node-minimist,
+         node-wordwrap
+Description: light-weight option parsing library for NodeJS
+ Optimist is a light-weight node.js library for option parsing.
+ .
+ It is a library for people who hate option parsing. More specifically,
+ this module is for people who like all the --bells and -whistlz of
+ program usage but think optstrings are a waste of time.
+ .
+ With optimist, option parsing doesn't have to suck (as much).
+ .
+ Node.js is an event-based server-side JavaScript engine.
+
