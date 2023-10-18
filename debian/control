@@ -1,25 +1,33 @@
 Source: node-optimist
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
-Uploaders: David Paleino <dapal@debian.org>,
-           Dominique Dumont <dod@debian.org>,
-           Bas Couwenberg <sebastic@debian.org>
-Section: web
-Priority: extra
-Build-Depends: debhelper (>= 9),
-               dh-buildinfo,
-               nodejs
-Standards-Version: 3.9.6
-Vcs-Browser: http://anonscm.debian.org/cgit/collab-maint/node-optimist.git
-Vcs-Git: git://anonscm.debian.org/collab-maint/node-optimist.git
+Uploaders:
+ David Paleino <dapal@debian.org>,
+ Dominique Dumont <dod@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , node-assert <!nocheck>
+ , node-hashish <!nocheck>
+ , node-minimist <!nocheck>
+ , node-tap (>= 15) <!nocheck>
+ , node-wordwrap <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-optimist
+Vcs-Git: https://salsa.debian.org/js-team/node-optimist.git
 Homepage: https://github.com/substack/node-optimist
-XS-Testsuite: autopkgtest
+Rules-Requires-Root: no
 
 Package: node-optimist
 Architecture: all
-Depends: ${misc:Depends},
-         nodejs,
-         node-minimist,
-         node-wordwrap
+Depends:
+ ${misc:Depends}
+ , node-minimist
+ , node-wordwrap
+Provides:
+ ${nodejs:Provides}
 Description: light-weight option parsing library for NodeJS
  Optimist is a light-weight node.js library for option parsing.
  .
@@ -30,4 +38,3 @@ Description: light-weight option parsing library for NodeJS
  With optimist, option parsing doesn't have to suck (as much).
  .
  Node.js is an event-based server-side JavaScript engine.
-
